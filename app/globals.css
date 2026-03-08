@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070e22;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+}
+@theme {
+  /* Background */
+  --color-background: #070e22;
+
+  /* Brand / Accent */
+  --color-primary: #882fff;
+  --color-secondary: #5c1cb2;
+
+  /* Decorative radial colors */
+  --color-radial-purple: #371c43;
+  --color-radial-blue-1: #1b2c8c;
+  --color-radial-blue-2: #233a85;
+
+  /* Text hierarchy */
+  --color-title: #f5eff7;
+  --color-heading-1: #e6e0e9;
+  --color-heading-2: #ded8e1;
+  --color-body: #aea9b1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+  .font-code-next {
+    font-family: var(--font-code-next);
+  }
+
+  .bg-main-gradient {
+    background:
+      radial-gradient(
+        700px circle at 10% 60%,
+        rgba(139, 92, 246, 0.25),
+        transparent 60%
+      ),
+      radial-gradient(
+        800px circle at 50% 10%,
+        rgba(168, 85, 247, 0.35),
+        transparent 60%
+      ),
+      radial-gradient(
+        600px circle at 90% 80%,
+        rgba(99, 102, 241, 0.25),
+        transparent 60%
+      ),
+      linear-gradient(180deg, #050816, #0a0f2c, #1b0f3a);
+  }
+  /* main background */
+  .page-bg {
+    background: linear-gradient(
+      135deg,
+      #020617 0%,
+      #071235 35%,
+      #1a0b3b 70%,
+      #2a0f46 100%
+    );
+  }
+  .bg-radial-purple {
+    background: radial-gradient(circle, #371c43, transparent);
+  }
+
+  .bg-radial-blue {
+    background: radial-gradient(circle, #1b2c8c, transparent);
+  }
+
+  /* glow system */
+  .glow {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    filter: blur(120px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* purple glow (kanan atas / tengah) */
+  .glow-purple {
+    background: radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.5),
+      transparent 60%
+    );
+  }
+
+  /* blue glow (kiri bawah) */
+  .glow-blue {
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.35),
+      transparent 60%
+    );
+  }
+  .glow-size-xs {
+    width: clamp(120px, 15vw, 260px);
+    height: clamp(120px, 15vw, 260px);
+  }
+
+  .glow-size-sm {
+    width: clamp(180px, 25vw, 420px);
+    height: clamp(180px, 25vw, 420px);
+  }
+
+  .glow-size-md {
+    width: clamp(240px, 35vw, 600px);
+    height: clamp(240px, 35vw, 600px);
+  }
+
+  .glow-size-lg {
+    width: clamp(300px, 45vw, 800px);
+    height: clamp(300px, 45vw, 800px);
+  }
+
+  .glow-size-xl {
+    width: clamp(360px, 55vw, 1000px);
+    height: clamp(360px, 55vw, 1000px);
+  }
+}
+@layer components {
+  p {
+    @apply text-body font-normal text-sm md:text-2xl tracking-wide;
+  }
+  h2 {
+    @apply text-heading-1 font-bold text-3xl md:text-5xl;
+  }
+  h3 {
+    @apply text-heading-2 font-bold text-2xl md:text-4xl;
+  }
+  .title {
+    @apply text-title font-bold text-4xl md:text-7xl;
+  }
+  .button-primary {
+    @apply bg-linear-to-br tracking-wide font-semibold text-sm from-secondary from-33% to-[#270C4C] rounded-2xl text-foreground py-4 px-8 hover:bg-secondary;
+  }
+  .text-image-hero {
+    @apply text-heading-1 py-2 px-6 w-fit bg-neutral-500/10 backdrop-blur-xs rounded-2xl font-normal text-sm md:text-5xl;
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#0f172a, #0f172a) padding-box,
+      linear-gradient(150deg, #775cf0, transparent, #42457b) border-box;
+  }
+  .radial-purple-glow {
+    @apply rounded-full opacity-65 blur-2xl;
+    background: radial-gradient(circle at center, #371c43 0%, transparent 80%);
+  }
+  .radial-blue-glow {
+    @apply rounded-full opacity-25 blur-2xl;
+    background: radial-gradient(circle at center, #233a85 0%, transparent 80%);
+  }
 }
