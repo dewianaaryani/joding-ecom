@@ -66,7 +66,7 @@ export default function Glow({
   return (
     <div
       className={`
-        pointer-events-none absolute rounded-full blur-3xl
+        pointer-events-none absolute rounded-full blur-xl md:blur-2xl
         ${colorClasses[color]}
         ${sizeClasses[size]}
         ${opacityClasses[opacity]}

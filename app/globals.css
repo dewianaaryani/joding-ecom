@@ -146,10 +146,21 @@ body {
     width: clamp(360px, 55vw, 1000px);
     height: clamp(360px, 55vw, 1000px);
   }
+  .radial-purple-glow {
+    background: radial-gradient(circle at center, #371c43 0%, transparent 80%);
+  }
+  .radial-blue-glow {
+    background: radial-gradient(circle at center, #233a85 0%, transparent 80%);
+  }
+  @layer utilities {
+    .container-padding {
+      @apply px-6 sm:px-8 lg:px-24 xl:px-32;
+    }
+  }
 }
 @layer components {
   p {
-    @apply text-body font-normal text-sm md:text-2xl tracking-wide;
+    @apply text-body font-normal text-sm md:text-xl tracking-wide;
   }
   h2 {
     @apply text-heading-1 font-bold text-3xl md:text-5xl;
@@ -158,24 +169,16 @@ body {
     @apply text-heading-2 font-bold text-2xl md:text-4xl;
   }
   .title {
-    @apply text-title font-bold text-4xl md:text-7xl;
+    @apply text-title font-bold md:font-semibold text-2xl leading-10 md:leading-16 md:text-5xl;
   }
   .button-primary {
     @apply bg-linear-to-br tracking-wide font-semibold text-sm from-secondary from-33% to-[#270C4C] rounded-2xl text-foreground py-4 px-8 hover:bg-secondary;
   }
   .text-image-hero {
-    @apply text-heading-1 py-2 px-6 w-fit bg-neutral-500/10 backdrop-blur-xs rounded-2xl font-normal text-sm md:text-5xl;
+    @apply text-heading-1 py-2 px-6 w-fit bg-neutral-500/10 backdrop-blur-xs rounded-2xl font-normal text-sm md:text-lg;
     border: 1px solid transparent;
     background:
       linear-gradient(#0f172a, #0f172a) padding-box,
       linear-gradient(150deg, #775cf0, transparent, #42457b) border-box;
-  }
-  .radial-purple-glow {
-    @apply rounded-full opacity-65 blur-2xl;
-    background: radial-gradient(circle at center, #371c43 0%, transparent 80%);
-  }
-  .radial-blue-glow {
-    @apply rounded-full opacity-25 blur-2xl;
-    background: radial-gradient(circle at center, #233a85 0%, transparent 80%);
   }
 }
