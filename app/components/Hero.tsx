@@ -16,7 +16,7 @@ export default function Hero() {
             <h1 className="font-code-next title">
               Joding Solve Your Coding Problems Faster 🚀
             </h1>
-            <p>
+            <p className="lead-description">
               Mulai dari tugas kuliah, pembuatan website, hingga perbaikan bug,
               semuanya bisa kami bantu dengan cepat dan rapi.
             </p>

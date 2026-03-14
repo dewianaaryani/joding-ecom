@@ -154,25 +154,34 @@ body {
   }
   @layer utilities {
     .container-padding {
-      @apply px-6 sm:px-8 lg:px-24 xl:px-32;
+      @apply px-8 lg:px-24 xl:px-32;
     }
   }
 }
 @layer components {
+  .lead-description {
+    @apply text-body font-normal text-xs xl:text-xl tracking-wide;
+  }
   p {
-    @apply text-body font-normal text-sm md:text-xl tracking-wide;
+    @apply text-body font-normal text-xs md:text-sm xl:text-base tracking-wide leading-5;
   }
   h2 {
-    @apply text-heading-1 font-bold text-3xl md:text-5xl;
+    @apply text-heading-1 font-bold text-3xl xl:text-5xl;
   }
   h3 {
-    @apply text-heading-2 font-bold text-2xl md:text-4xl;
+    @apply text-heading-2 font-semibold text-xl xl:text-2xl;
   }
   h4 {
-    @apply text-primary font-bold text-base md:text-2xl;
+    @apply text-white font-bold text-sm lg:text-base;
+  }
+  h5 {
+    @apply text-title font-normal text-sm md:text-lg;
+  }
+  .title-section {
+    @apply text-3xl md:text-3xl xl:text-4xl font-bold text-center text-white;
   }
   .title {
-    @apply text-title font-bold md:font-semibold text-2xl leading-10 md:leading-16 md:text-5xl;
+    @apply text-title font-bold md:font-semibold text-2xl leading-10 md:leading-16 xl:text-5xl;
   }
   .button-primary {
     @apply bg-linear-to-br tracking-wide font-semibold text-sm from-secondary from-33% to-[#270C4C] rounded-2xl text-foreground py-4 px-8 hover:bg-secondary;
