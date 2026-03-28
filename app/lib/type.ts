@@ -7,3 +7,7 @@ export type GlowPattern = {
 export type startProps = {
   start: boolean;
 };
+export type FormContactProps = {
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedPlan?: string;
+};

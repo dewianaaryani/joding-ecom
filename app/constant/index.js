@@ -75,18 +75,18 @@
   export const navigations = [
     {
       title: "Home",
-      href: "/",
+      href: "#home",
     },
     {
       title: "Tentang Kami",
-      href: "/tentang-kami",
+      href: "#about",
     },
     {
       title: "Paket Layanan",
-      href: "/paket-layanan",
+      href: "#paket-layanan",
     },
     {
       title: "Kontak",
-      href: "/kontak",
+      href: "#footer",
     },
   ];

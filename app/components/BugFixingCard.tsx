@@ -109,7 +109,7 @@ export default function BugFixingCard(): JSX.Element {
       {/* Error underline */}
       <div
         ref={errorRef}
-        className="absolute left-6 top-[72px] w-[260px] h-[2px] bg-red-500 opacity-0"
+        className="absolute left-6 top-18 w-65 h-0.5 bg-red-500 opacity-0"
       />
     </div>
   );

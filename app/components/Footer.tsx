@@ -1,16 +1,19 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
 import { navigations } from "../constant";
+import FormContact from "./FormContact";
 
 export default function Footer() {
+  const [isOpen, setIsOpen] = React.useState(false);
   const footerContacts = [
     {
       id: 1,
       title: "Instagram",
       content: "@jodingdotcom",
-      href: "https://www.instagram.com/joding.dev/",
+      href: "https://www.instagram.com/jodingdotcom/",
       src: "/icons/instagram.png",
       size: "size-8",
     },
@@ -43,9 +46,12 @@ export default function Footer() {
             <Logo />
             <p>
               Tertarik lebih lanjut atau sekedar ingin bertanya? {""}
-              <Link href="" className="underline decoration-primary">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="underline decoration-primary hover:text-primary transition-all"
+              >
                 Kontak kami sekarang
-              </Link>
+              </button>
             </p>
           </div>
         </div>
@@ -98,6 +104,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
+      {isOpen && <FormContact setIsOpen={setIsOpen} />}
     </section>
   );
 }

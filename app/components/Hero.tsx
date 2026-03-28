@@ -1,9 +1,12 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Glow from "./Glow";
+import FormContact from "./FormContact";
 
 export default function Hero() {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <section
       id="Hero"
@@ -21,7 +24,10 @@ export default function Hero() {
               semuanya bisa kami bantu dengan cepat dan rapi.
             </p>
           </div>
-          <button className="button-primary w-fit mx-auto xl:mx-0 inline-flex items-center gap-2">
+          <button
+            className="button-primary cursor-pointer w-fit mx-auto xl:mx-0 inline-flex items-center gap-2 hover:gap-3 transition-all"
+            onClick={() => setIsOpen(true)}
+          >
             Konsultasi Sekarang
             <ArrowRight strokeWidth={3} size={18} />
           </button>
@@ -59,6 +65,7 @@ export default function Hero() {
         opacity="low"
         className="bottom-80 md:bottom-0 -left-20"
       />
+      {isOpen && <FormContact setIsOpen={setIsOpen} />}
     </section>
   );
 }

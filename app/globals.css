@@ -175,6 +175,15 @@ body {
   h5 {
     @apply text-title font-normal text-sm md:text-lg;
   }
+  label {
+    @apply text-body text-left font-normal text-xs md:text-sm xl:text-base tracking-wide;
+  }
+  input {
+    @apply text-body font-normal text-xs md:text-sm tracking-wide border border-secondary/40 bg-none p-2 w-full rounded-lg ring-1 ring-secondary/40 focus:ring-2 focus:ring-secondary/60 focus:outline-none transition-all;
+  }
+  textarea {
+    @apply text-body font-normal text-xs md:text-sm tracking-wide border border-secondary/40 bg-none p-2 w-full rounded-lg ring-1 ring-secondary/40 focus:ring-2 focus:ring-secondary/60 focus:outline-none transition-all;
+  }
   .title-section {
     @apply text-3xl md:text-3xl xl:text-4xl font-bold text-center text-white;
   }
@@ -184,6 +193,7 @@ body {
   .button-primary {
     @apply bg-linear-to-br tracking-wide font-semibold text-sm from-secondary from-33% to-[#270C4C] rounded-2xl text-foreground py-4 px-8 hover:bg-secondary;
   }
+
   .text-image-hero {
     @apply text-heading-1 py-1 px-4  md:py-2 md:px-6 w-fit bg-neutral-500/10 backdrop-blur-xs rounded-2xl font-normal text-xs sm:text-base;
     border: 1px solid transparent;

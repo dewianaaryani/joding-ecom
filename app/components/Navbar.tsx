@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
 import { MenuIcon, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,10 +17,18 @@ export default function Navbar() {
           <Logo />
 
           <div className="flex-1 flex justify-between max-w-lg xl:max-w-xl text-sm lg:text-md text-neutral-400">
-            <h6>Home</h6>
-            <h6>Tentang Kami</h6>
-            <h6>Paket Layanan</h6>
-            <h6>Konsultasi</h6>
+            <Link className="hover:text-white" href="#home">
+              Home
+            </Link>
+            <Link className="hover:text-white" href="#about">
+              Tentang Kami
+            </Link>
+            <Link className="hover:text-white" href="#paket-layanan">
+              Paket Layanan
+            </Link>
+            <Link className="hover:text-white" href="#footer">
+              Konsultasi
+            </Link>
           </div>
         </div>
 

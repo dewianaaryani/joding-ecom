@@ -1,9 +1,15 @@
-import { Check } from "lucide-react";
-import React from "react";
+"use client";
+import { Check, MessageCircle, Send } from "lucide-react";
+import React, { useState } from "react";
 import Glow from "./Glow";
 import { GlowPattern } from "../lib/type";
 
+import FormContact from "./FormContact";
+
 export default function Pricing() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
+
   const pricingData = [
     {
       title: "Basic Task",
@@ -95,7 +101,13 @@ export default function Pricing() {
                 <h5 className="font-bold text-xl">{title}</h5>
                 <p className="">{description}</p>
               </div>
-              <button className="border border-secondary w-full px-2 py-3 rounded-lg text-xs font-semibold">
+              <button
+                onClick={() => {
+                  setSelectedPlan(title);
+                  setIsOpen(true);
+                }}
+                className="border border-secondary w-full px-2 py-3 rounded-lg text-xs font-semibold"
+              >
                 Pilih {title}
               </button>
               <div className="flex flex-col gap-2">
@@ -122,6 +134,9 @@ export default function Pricing() {
           ))}
         </div>
       </div>
+      {isOpen && (
+        <FormContact setIsOpen={setIsOpen} selectedPlan={selectedPlan} />
+      )}
     </section>
   );
 }
