@@ -1,6 +1,15 @@
 import { create } from "zustand";
+type MacbookState = {
+  color: string;
+  setColor: (color: string) => void;
+  scale: number;
+  setScale: (scale: number) => void;
+  texture: string;
+  setTexture: (texture: string) => void;
+  reset: () => void;
+};
 
-export const useMacbookStore = create((set) => ({
+export const  useMacbook = create<MacbookState>((set) => ({
   color: "#2e2c2e",
   setColor: (color) => set({ color }),
   scale: 0.08,

@@ -14,14 +14,14 @@ import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { ThreeElements } from "@react-three/fiber";
 import { Color } from "three";
 import * as THREE from "three";
-import { useMacbookStore } from "@/app/store";
+import { useMacbook } from "@/app/store";
 
 type MacbookState = {
   color: string;
   texture: string;
 };
 export default function MacbookModel(props: ThreeElements["group"]) {
-  const { color, texture } = useMacbookStore() as MacbookState;
+  const { color, texture } = useMacbook() as MacbookState;
   const { nodes, materials, scene } = useGLTF(
     "/models/macbook-transformed.glb",
   ) as any;
