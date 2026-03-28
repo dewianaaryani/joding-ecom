@@ -72,3 +72,21 @@
       shadowColor: "purple-500",
     },
   ];
+  export const navigations = [
+    {
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "Tentang Kami",
+      href: "/tentang-kami",
+    },
+    {
+      title: "Paket Layanan",
+      href: "/paket-layanan",
+    },
+    {
+      title: "Kontak",
+      href: "/kontak",
+    },
+  ];

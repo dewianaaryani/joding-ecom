@@ -6,6 +6,7 @@ import Catalog from "./components/Catalog";
 import Ads from "./components/Ads";
 import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
+import Review from "./components/Review";
 export default function Home() {
   return (
     <main className="relative flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <Catalog />
       <Pricing />
+      <Review />
       <Ads />
       <Footer />
     </main>

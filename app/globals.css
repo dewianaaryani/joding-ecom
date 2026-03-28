@@ -152,10 +152,8 @@ body {
   .radial-blue-glow {
     background: radial-gradient(circle at center, #233a85 0%, transparent 80%);
   }
-  @layer utilities {
-    .container-padding {
-      @apply px-8 lg:px-24 xl:px-32;
-    }
+  .container-padding {
+    @apply px-8 lg:px-24 xl:px-32;
   }
 }
 @layer components {
@@ -187,7 +185,7 @@ body {
     @apply bg-linear-to-br tracking-wide font-semibold text-sm from-secondary from-33% to-[#270C4C] rounded-2xl text-foreground py-4 px-8 hover:bg-secondary;
   }
   .text-image-hero {
-    @apply text-heading-1 py-2 px-6 w-fit bg-neutral-500/10 backdrop-blur-xs rounded-2xl font-normal text-sm md:text-lg;
+    @apply text-heading-1 py-1 px-4  md:py-2 md:px-6 w-fit bg-neutral-500/10 backdrop-blur-xs rounded-2xl font-normal text-xs sm:text-base;
     border: 1px solid transparent;
     background:
       linear-gradient(#0f172a, #0f172a) padding-box,

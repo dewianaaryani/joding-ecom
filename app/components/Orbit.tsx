@@ -48,7 +48,7 @@ const DEFAULT_ICONS: IconData[] = [
   { src: "/icons/figma.png", shadowColor: "168,85,247", label: "Figma" },
   { src: "/icons/xd.png", shadowColor: "236,72,153", label: "XD" },
   {
-    src: "/icons/bootstrap.png",
+    src: "/icons/bootsrap.png",
     shadowColor: "99,102,241",
     label: "Bootstrap",
   },
@@ -223,7 +223,14 @@ function OrbitRing({
         const top = radius + radius * Math.sin(theta) - iconHalf;
 
         return (
-          <div key={icon.label} className="absolute" style={{ left, top }}>
+          <div
+            key={icon.label}
+            className="absolute"
+            style={{
+              left: `${left.toFixed(2)}px`,
+              top: `${top.toFixed(2)}px`,
+            }}
+          >
             <IconBubble
               icon={icon}
               size={iconSize}

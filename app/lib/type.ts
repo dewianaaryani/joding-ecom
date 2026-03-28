@@ -4,3 +4,6 @@ export type GlowPattern = {
   position: string;
     opacity?: "low" | "medium" | "high";
 };
+export type startProps = {
+  start: boolean;
+};
