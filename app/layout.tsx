@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-
+import { Analytics } from "@vercel/analytics/next";
 const codeNext = localFont({
   variable: "--font-code-next",
   src: [
@@ -61,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${codeNext.className}`}>
       <body className={`${poppins.className}`}>{children}</body>
+      <Analytics />
     </html>
   );
 }
